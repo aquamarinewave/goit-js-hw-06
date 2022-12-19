@@ -15,17 +15,20 @@ const images = [
 
 const listGallery = document.querySelector('.gallery');
 
-for (const image in images) {
+const itemsGallery = images.map(({url, alt}) => {
   const itemGallery = `
-    <li class="gallery-item"> 
-      <img
-        class="gallery-img"
-        src="${images[image].url}"
-        alt="${images[image].alt}"
-      />
-    </li>
-  `;
-  listGallery.insertAdjacentHTML("beforeend", itemGallery);
-}
+      <li class="gallery-item"> 
+        <img
+          class="gallery-img"
+          src="${url}"
+          alt="${alt}"
+        />
+      </li>
+    `;
+  return itemGallery;
+}).join("");
+
+listGallery.insertAdjacentHTML("beforeend", itemsGallery);
+
 
 console.log(listGallery);

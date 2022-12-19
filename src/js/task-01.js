@@ -4,8 +4,7 @@ const quantityCategories = itemsCategories.length;
 console.log('Number of Categories: ' + quantityCategories);
 const titleItemCategories = listCategories.querySelectorAll('h2');
 
-for (let i = 0; i < titleItemCategories.length; i += 1) {
-    console.log('Category: ' + titleItemCategories[i].outerText);
-    console.log('Elements: ' + itemsCategories[i].querySelectorAll('li').length);
-}
-
+itemsCategories.forEach((item, index) => {
+    console.log('Category: ' + titleItemCategories[index].outerText);
+    console.log('Elements: ' + item.querySelectorAll('li').length);
+});
